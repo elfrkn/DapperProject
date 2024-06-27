@@ -1,32 +1,62 @@
-﻿using DapperProject.Dtos.CategoryDtos;
+﻿using Dapper;
+using DapperProject.Context;
+using DapperProject.Dtos.CategoryDtos;
 
 namespace DapperProject.Services
 {
     public class CategoryService : ICategoryService
     {
-        public Task CreateCategoryAsync(CreateCategoryDto createCategoryDto)
+        private readonly DapperContext _context;
+
+        public CategoryService(DapperContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task DeleteCategoryAsync(int id)
+        public async Task CreateCategoryAsync(CreateCategoryDto createCategoryDto)
         {
-            throw new NotImplementedException();
+            string query = "Insert Into TblCategory(CategoryName) values(@categoryName)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@categoryName", createCategoryDto.CategoryName);
+            var connection = _context.CreateConnection();
+            await connection.ExecuteAsync(query, parameters);
         }
 
-        public Task<List<ResultCategoryDto>> GetAllCategoryAsync()
+        public async Task DeleteCategoryAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = "Delete From TblCategory Where CategoryId=@categoryId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@categoryId", id);
+            var connection = _context.CreateConnection();
+            await connection.ExecuteAsync(query, parameters);
         }
 
-        public Task<GetByIdCategoryDto> GetCategoryAsync(int id)
+        public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
         {
-            throw new NotImplementedException();
+            string query = "Select * From TblCategory";
+            var connection = _context.CreateConnection();
+            var values = await connection.QueryAsync<ResultCategoryDto>(query);
+            return values.ToList();
         }
 
-        public Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
+        public async Task<GetByIdCategoryDto> GetCategoryAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = "Select * From TblCategory Where CategoryId=@categoryId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@categoryId", id);
+            var connection = _context.CreateConnection();
+            var values = await connection.QueryFirstOrDefaultAsync<GetByIdCategoryDto>(query,parameters);
+            return values;
+        }
+
+        public async Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
+        {
+            string query = "Update TblCategory Set CategoryName=@categoryName where CategoryId=@categoryId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@categoryName", updateCategoryDto.CategoryName);
+            parameters.Add("@categoryId", updateCategoryDto.CategoryId);
+            var connection = _context.CreateConnection();
+            await connection.ExecuteAsync(query, parameters);
         }
     }
 }
