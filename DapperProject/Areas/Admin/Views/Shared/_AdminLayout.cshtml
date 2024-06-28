@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@await Component.InvokeAsync("_AdminHeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_AdminPreloaderComponentPartial")
+
+    <div id="main-wrapper">
+
+
+        @await Component.InvokeAsync("_AdminNavheaderComponentPartial")
+
+        @await Component.InvokeAsync("_AdminHeaderComponentPartial")
+
+        @await Component.InvokeAsync("_AdminSidebarComponentPartial")
+
+        <div class="content-body">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+
+        @await Component.InvokeAsync("_AdminFooterComponentPartial")
+    </div>
+
+    @await Component.InvokeAsync("_AdminScriptComponentPartial")
+
+</body>
+
+</html>
+
+
+

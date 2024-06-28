@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_NavbarComponentPartial")
+    <!-- END nav -->
+    @await Component.InvokeAsync("_SliderComponentPartial")
+
+    <section class="ftco-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 search-wrap">
+                   
+                    <form action="#" class="search-property">
+                        <div class="row">
+                            <div class="col-md align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Keyword</label>
+                                    <div class="form-field">
+                                        <div class="icon"><span class="icon-pencil"></span></div>
+                                        <input type="text" class="form-control" placeholder="Keyword">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Location</label>
+                                    <div class="form-field">
+                                        <div class="icon"><span class="icon-pencil"></span></div>
+                                        <input type="text" class="form-control" placeholder="City/Locality Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Property Type</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Type</option>
+                                                <option value="">Commercial</option>
+                                                <option value="">- Office</option>
+                                                <option value="">Residential</option>
+                                                <option value="">Villa</option>
+                                                <option value="">Condominium</option>
+                                                <option value="">Apartment</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Property Status</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Type</option>
+                                                <option value="">Rent</option>
+                                                <option value="">Sale</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Agents</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Any</option>
+                                                <option value="">Jonh Doe</option>
+                                                <option value="">Doe Mags</option>
+                                                <option value="">Kenny Scott</option>
+                                                <option value="">Emily Storm</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md align-self-end">
+                                <div class="form-group">
+                                    <div class="form-field">
+                                        <input type="submit" value="Search" class="form-control btn btn-primary">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Component.InvokeAsync("_FeatureComponentPartial")
+
+    @await Component.InvokeAsync("_Last4PropertyComponentPartial")
+
+    @await Component.InvokeAsync("_StatisticComponentPartial")
+
+    @await Component.InvokeAsync("_TestimonialComponentPartial")
+
+    @await Component.InvokeAsync("_SubscribeComponentPartial")
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+   
+</body>
+</html>

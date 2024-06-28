@@ -30,7 +30,16 @@ namespace DapperProject.Controllers
         public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
         {
             await _productService.CreateProductAsync(createProductDto);
-            return RedirectToAction("ProductList");
+            return RedirectToAction("ProductListWithCategory");
         }
+
+        public async Task<IActionResult> ProductListWithCategory()
+        {
+            var values = await _productService.GetAllProductWithCategoryAsync();
+            ViewBag.v = await _productService.GetProductCount();
+            return View(values);
+        }
+
+        
     }
 }
