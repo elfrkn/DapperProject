@@ -1,0 +1,42 @@
+﻿@model List<ResultPropertyDto>
+@{
+    ViewData["Title"] = "PropertyList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Resim</th>
+                <th>Lokasyon</th>
+                <th>Başlık</th>
+                <th>Fiyat</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td><img src="@item.ImageUrl" style="height:100px; width:150px" /></td>
+                    <td>@item.LocationName</td>
+                    <td>@item.PropertyTitle</td>
+                    <td>@item.Price</td>
+                    <td><a href="/Property/DeletePropetry/@item.PropertyId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Admin/Property/UpdateProperty/@item.PropertyId" class="btn btn-info">Güncelle</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/Property/CreateProperty/" class="btn btn-primary">Yeni Emlak Girişi</a>
+</div>
+

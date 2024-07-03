@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_NavbarComponentPartial")
+
+    <div class="hero-wrap" style="background-image: url('/royalestate-master/images/bg_1.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Ana Sayfa</a></span> <span>İletişim</span></p>
+                    <h1 class="mb-3 bread">İletişim</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="ftco-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 search-wrap">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="ftco-section contact-section bg-light">
+        <div class="container">
+            <div class="row d-flex mb-5 contact-info">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h3">İletişim Bilgileri</h2>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-4 d-flex">
+                    <div class="info bg-white p-4" style="text-align: center;">
+                        <p style="font-size: 12px;"><span style="font-weight: 600; font-size:15px;">Adres:</span> Toprak Villaları Toprak Vilları No:134 İstanbul</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="info bg-white p-4" style="text-align: center;">
+                        <p style="font-size: 12px;"><span style="font-weight: 600; font-size:15px;">Teelefon No:</span> <a href="tel:+90 312 123 45 67"> + 444 14 24</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="info bg-white p-4" style="text-align: center;">
+                        <p style="font-size: 12px;"><span style="font-weight: 600; font-size:15px;">Email:</span> <a href="mailto:emlakdanismanlik@realestate.com">emlakdanismanlik@realestate.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row block-9">
+                <div class="col-md-6 order-md-last d-flex">
+                    <form action="#" class="bg-white p-5 contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ad Soyad">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Konu">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Mesaj"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Gönder" class="btn btn-primary py-3 px-5">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-6 d-flex">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.56056999802!2d29.01645097586103!3d41.05673777134383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7b4c550886d%3A0xdc9ab89b34686e7c!2sElbeyo%C4%9Flu%20Hukuk%20B%C3%BCrosu!5e0!3m2!1str!2str!4v1720029832606!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Component.InvokeAsync("_SubscribeComponentPartial")
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+
+</body>
+</html>

@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DapperProject.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DapperProject.ViewComponents
 {
 	public class _TestimonialComponentPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke()
+		private readonly ITestimonialService _testimonialService;
+
+        public _TestimonialComponentPartial(ITestimonialService testimonialService)
+        {
+            _testimonialService = testimonialService;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
 		{
-			return View();
+			var values = await _testimonialService.GetAllTestimonialAsync();
+			return View(values);
 		}
 	}
 

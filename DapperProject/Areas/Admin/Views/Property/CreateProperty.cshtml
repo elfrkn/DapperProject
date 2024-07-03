@@ -1,0 +1,103 @@
+﻿@model CreatePropertyDto
+@{
+    ViewData["Title"] = "CreateProperty";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>Resim Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label for="email">Diğer Resimler</label>
+    <input type="text" class="form-control" asp-for="ImagesId">
+    <br />
+    <label>Lokasyon</label>
+    <input type="text" asp-for="LocationId" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>Metre Kare</label>
+    <input type="text" class="form-control" asp-for="SquareMeter">
+    <br />
+    <label>Oda Sayısı</label>
+    <input type="text" class="form-control" asp-for="BedRooms">
+    <br />
+    <label>Banyo Sayısı</label>
+    <input type="text" class="form-control" asp-for="BathRooms">
+    <br />
+    <label>Garaj Sayısı</label>
+    <input type="text" class="form-control" asp-for="Garage">
+    <br />
+    <label>Bina Yaşı</label>
+    <input type="text" class="form-control" asp-for="BuildAge">
+    <br />
+    <label>Bulunduğu Kat</label>
+    <input type="text" class="form-control" asp-for="Floorlocation">
+    <br />
+    <label>Toplam Kat</label>
+    <input type="text" class="form-control" asp-for="FloorNumber">
+    <br />
+    <label>Isınma Türü</label>
+    <input type="text" class="form-control" asp-for="Heating">
+    <br />
+    <label>Date</label>
+    <input type="text" class="form-control" asp-for="Date">
+    <br />
+   
+    <label>Detaylar</label>
+    <textarea rows="35" class="form-control" id="myeditor" asp-for="Desciption"></textarea>
+    <br />
+    <br />
+    <select class="form-select" id="select1" asp-for="IsFeatured">
+        <option value="1">Evet</option>
+        <option value="0">Hayır</option>
+    </select>
+    <label for="select1">Öne Çıkan İlan Mı?</label>
+    <br />
+
+    <select class="form-select" id="select2" asp-for="TypeId">
+        <option selected disabled>Seçiniz</option>
+        @foreach (var item in ViewBag.type)
+        {
+            <option value="@item.Id">@item.TypeName</option>
+        }
+    </select>
+    <label for="select2">Emlak Türü</label>
+    <br />
+
+    <select class="form-select" id="select3" asp-for="StatusId">
+        <option selected disabled>Seçiniz</option>
+        @foreach (var item in ViewBag.status)
+        {
+            <option value="@item.PropertyStatus">@item.Name</option>
+        }
+
+    </select>
+    <label for="select3">Emlak Durumu</label>
+    <br />
+
+    <select class="form-select" id="select3" asp-for="AgentId">
+        <option selected disabled>Seçiniz</option>
+        @foreach (var item in ViewBag.agent)
+        {
+            <option value="@item.AgentId">@item.AgentName</option>
+        }
+       
+    </select>
+    <label for="select3">Danışman Seçin</label>
+    <br />
+
+    <select class="form-select" id="select3" asp-for="TagId">
+        <option selected disabled>Seçiniz</option>
+        @foreach (var item in ViewBag.tag)
+        {
+            <option value="@item.TagId">@item.TagName</option>
+        }
+    </select>
+    <label for="select3">Etiket Seçin</label>
+    <br />
+    <button class="btn btn-outline-success">Kaydet</button>
+</form>
+

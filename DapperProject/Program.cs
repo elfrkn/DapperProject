@@ -10,6 +10,16 @@ builder.Services.AddScoped<DapperContext>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<ISliderService,SliderService>();
+builder.Services.AddScoped<IPropertyService,PropertyService>();
+builder.Services.AddScoped<ILocationService,LocationService>();
+builder.Services.AddScoped<IAgentService,AgentService>();
+builder.Services.AddScoped<ITestimonialService,TestimonialService>();
+builder.Services.AddScoped<IPropertyTypeService, PropertyTypeService>();
+builder.Services.AddScoped<IStatusService, StatusService>();
+builder.Services.AddScoped<ITagService, TagService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -1,6 +1,9 @@
-﻿@{
+﻿@model ResultPropertyDto
+@{
     Layout = null;
 }
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,40 +20,22 @@
             <div class="row">
                 <div class="col-md-12 search-wrap">
                    
-                    <form action="#" class="search-property">
+                    <form asp-action="Index" asp-controller="Default" class="search-property">
                         <div class="row">
+                            
                             <div class="col-md align-items-end">
                                 <div class="form-group">
-                                    <label for="#">Keyword</label>
-                                    <div class="form-field">
-                                        <div class="icon"><span class="icon-pencil"></span></div>
-                                        <input type="text" class="form-control" placeholder="Keyword">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md align-items-end">
-                                <div class="form-group">
-                                    <label for="#">Location</label>
-                                    <div class="form-field">
-                                        <div class="icon"><span class="icon-pencil"></span></div>
-                                        <input type="text" class="form-control" placeholder="City/Locality Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md align-items-end">
-                                <div class="form-group">
-                                    <label for="#">Property Type</label>
+                                    <label for="#">Lokasyon Seç</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Type</option>
-                                                <option value="">Commercial</option>
-                                                <option value="">- Office</option>
-                                                <option value="">Residential</option>
-                                                <option value="">Villa</option>
-                                                <option value="">Condominium</option>
-                                                <option value="">Apartment</option>
+                                            <select name="LocationId" id="LocationId" class="form-control">
+                                                <option selected disabled="">Seçin</option>
+                                                @foreach (var item in ViewBag.location)
+                                                {
+                                                    <option value="@item.Id">@item.LocationName</option>
+
+                                                }
                                             </select>
                                         </div>
                                     </div>
@@ -58,14 +43,17 @@
                             </div>
                             <div class="col-md align-items-end">
                                 <div class="form-group">
-                                    <label for="#">Property Status</label>
+                                    <label for="#">Emlak Türü Seç</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Type</option>
-                                                <option value="">Rent</option>
-                                                <option value="">Sale</option>
+                                            <select name="typeId" id="Id" class="form-control">
+                                                <option selected disabled="">Seçin</option>
+                                                @foreach (var item in ViewBag.type)
+                                                {
+                                                    <option value="@item.Id">@item.TypeName</option>
+
+                                                }
                                             </select>
                                         </div>
                                     </div>
@@ -73,28 +61,29 @@
                             </div>
                             <div class="col-md align-items-end">
                                 <div class="form-group">
-                                    <label for="#">Agents</label>
+                                    <label for="#">Emlak Durumu Seç</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Any</option>
-                                                <option value="">Jonh Doe</option>
-                                                <option value="">Doe Mags</option>
-                                                <option value="">Kenny Scott</option>
-                                                <option value="">Emily Storm</option>
+                                            <select name="statusId" id="status" class="form-control">
+                                                <option selected disabled="">Seçin</option>
+                                                @foreach (var item in ViewBag.status)
+                                                {
+                                                    <option value="@item.PropertyStatus">@item.Name</option>
+
+                                                }
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="col-md align-self-end">
                                 <div class="form-group">
                                     <div class="form-field">
-                                        <input type="submit" value="Search" class="form-control btn btn-primary">
+                                        <input type="submit" value="İlan Ara" class="form-control btn btn-primary">
                                     </div>
                                 </div>
                             </div>

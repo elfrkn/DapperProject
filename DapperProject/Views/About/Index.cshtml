@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_NavbarComponentPartial")
+
+	<div class="hero-wrap" style="background-image: url('/royalestate-master/images/bg_1.jpg');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-center justify-content-center">
+				<div class="col-md-9 ftco-animate text-center">
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Anasayfa</a></span> <span>Hakkımızda</span></p>
+					<h1 class="mb-3 bread">Hakkımızda</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="ftco-section ftc-no-pb">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/royalestate-master/images/about.jpg);">
+					<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+						<span class="icon-play"></span>
+					</a>
+				</div>
+				<div class="col-md-7 wrap-about pb-md-5 ftco-animate">
+					<div class="heading-section heading-section-wo-line mb-5 pl-md-5">
+						<div class="pl-md-5 ml-md-5">
+							<span class="subheading">
+								
+							</span>
+							<h2 class="mb-4">Biz Kimiz?</h2>
+						</div>
+					</div>
+					<div class="pl-md-5 ml-md-5 mb-5">
+						<p></p>
+						<p>Gayrimenkul sektöründe güvenilirlik, profesyonellik ve müşteri memnuniyetini ön planda tutan lider bir firmadır. Uzman ekibimizle, siz değerli müşterilerimize en doğru ve etkili çözümleri sunmak için çalışıyoruz. Gayrimenkul alım-satım, kiralama, projelendirme, taşınmaz değerleme ve yatırım danışmanlığı gibi geniş hizmet yelpazemizle, her adımda yanınızdayız. TR Real Estate ile hayallerinizdeki gayrimenkule ulaşmak, yatırımınızı en iyi şekilde değerlendirmek ve emlak dünyasında fark yaratmak çok daha kolay. Bizimle çalışarak, sektörün en iyileriyle tanışın ve gayrimenkul alanındaki tüm ihtiyaçlarınızı güvenle karşılayın.</p>
+						<p>Müşterilerimizin bize duyduğu güveni her zaman korumak için şeffaf ve dürüst bir şekilde çalışıyoruz. İş süreçlerimizde açıklık ve hesap verebilirlik prensiplerine bağlı kalıyoruz. Her bir müşterimize en yüksek standartlarda hizmet sunmak için uzman ekibimizle birlikte çalışıyoruz. İşimizi en iyi şekilde yapmak için sürekli olarak eğitimler alıyor ve kendimizi geliştiriyoruz.</p>
+						<p><a href="#" class="btn-custom">Detaylar >> <span class="ion-ios-arrow-forward"></span></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+
+ 
+
+
+    @await Component.InvokeAsync("_SubscribeComponentPartial")
+
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+
+</body>
+</html>

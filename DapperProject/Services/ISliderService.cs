@@ -1,4 +1,4 @@
-﻿using DapperProject.Dtos.SliderDtos;
+﻿using DapperProject.Dtos.SliderDto;
 
 namespace DapperProject.Services
 {

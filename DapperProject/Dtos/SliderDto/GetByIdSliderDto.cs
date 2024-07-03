@@ -1,4 +1,4 @@
-﻿namespace DapperProject.Dtos.SliderDtos
+﻿namespace DapperProject.Dtos.SliderDto
 {
     public class GetByIdSliderDto
     {
@@ -10,4 +10,3 @@
         public decimal Price { get; set; }
     }
 }
-

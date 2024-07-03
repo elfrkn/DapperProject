@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DapperProject.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DapperProject.ViewComponents
 {
 	public class _FeatureComponentPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke()
+		private readonly IPropertyService _propertyService;
+
+        public _FeatureComponentPartial(IPropertyService propertyService)
+        {
+            _propertyService = propertyService;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
 		{
-			return View();
+			var values = await _propertyService.GetFeaturedListPropertyAsync();
+			return View(values);
 		}
 	}
 
