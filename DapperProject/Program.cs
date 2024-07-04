@@ -18,6 +18,7 @@ builder.Services.AddScoped<IPropertyTypeService, PropertyTypeService>();
 builder.Services.AddScoped<IStatusService, StatusService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IDataService, DataService>();
 
 
 builder.Services.AddControllersWithViews();

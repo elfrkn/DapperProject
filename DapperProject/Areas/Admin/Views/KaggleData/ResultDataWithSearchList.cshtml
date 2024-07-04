@@ -1,0 +1,56 @@
+﻿@model List<ResultDataDto>
+@{
+    ViewData["Title"] = "ResultDataWithSearchList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Arama sonucunuz aşağıda listelenmiştir.</h1>
+<br /><br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Film Adı</th>
+                                    <th>Rating</th>
+                                    <th>Tür</th>
+                                    <th>Yıl</th>
+                                    <th>Yönetmen</th>
+                                    <th>Aktörler</th>
+                                    <th>İzlenme Sayısı</th>
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.MovieName</td>
+                                        <td>@item.Rating</td>
+                                        <td>@item.Genre</td>
+                                        <td>@item.Year</td>
+                                        <td>@item.Director</td>
+                                        <td>@item.Stars</td>
+                                        <td>@item.ViewsCaunt</td>
+                                        <td><a href="/KaggleData/Detail/@item.Id" class="btn btn-dark">Detaylar</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿@model List<ResultDataDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+    int count = 0;
+}
+@await Component.InvokeAsync("_AdminHeadComponentPartial")
+
+<body>
+
+    @await Component.InvokeAsync("_AdminPreloaderComponentPartial")
+
+    <div id="main-wrapper">
+
+
+        @await Component.InvokeAsync("_AdminNavheaderComponentPartial")
+
+        @* @await Component.InvokeAsync("_AdminHeaderComponentPartial") *@
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+
+                        <form method="post">
+
+                            <input type="search" class="form-control" name="movieName" placeholder="Aranacak kelimeyi girin" required>
+                           @*  <input type="submit" value="Film Ara" class="form-control btn btn-primary"> *@
+                        </form>
+                        <div class="drop-down   d-md-none">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("_AdminSidebarComponentPartial")
+        
+
+
+        <div class="content-body">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Film Adı</th>
+                                                <th>Rating</th>
+                                                <th>Tür</th>
+                                                <th>Yıl</th>
+                                                <th>Yönetmen</th>
+                                                <th>Aktörler</th>
+                                                <th>İzlenme Sayısı</th>
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                count++;
+                                                <tr>
+                                                    <th>@count</th>
+                                                    <td>@item.MovieName</td>
+                                                    <td>@item.Rating</td>
+                                                    <td>@item.Genre</td>
+                                                    <td>@item.Year</td>
+                                                    <td>@item.Director</td>
+                                                    <td>@item.Stars</td>
+                                                    <td>@item.ViewsCaunt</td>
+                                                    <td><a href="/KaggleData/Detail/@item.Id" class="btn btn-dark">Detaylar</a></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+
+        @await Component.InvokeAsync("_AdminFooterComponentPartial")
+    </div>
+
+    @await Component.InvokeAsync("_AdminScriptComponentPartial")
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#myeditor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+</body>
+
+</html>
