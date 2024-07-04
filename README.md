@@ -40,8 +40,10 @@ Ayrıca Kaggle ile Imbd Dataseti çekilerek bir Dashboard paneli hazırlanmışt
 ![Detail3](https://github.com/elfrkn/DapperProject/assets/101409313/0ffc2e96-f85d-49ee-a7ee-94bf6e344699)
 
 ### Kaggle
-![Dashboard](https://github.com/elfrkn/DapperProject/assets/101409313/d0d11720-fa74-4a7f-9eee-a73e462a2710)
-![DataSearch](https://github.com/elfrkn/DapperProject/assets/101409313/8774c958-4a43-4a1f-820d-8406755eb8fd)
+![Dashboard](https://github.com/elfrkn/DapperProject/assets/101409313/b2e01791-5829-4fdb-b8fe-77419d27cbef)
+![KaggleData](https://github.com/elfrkn/DapperProject/assets/101409313/8f9c6db4-c284-41da-8a0d-f073eca28829)
+![DataSearch](https://github.com/elfrkn/DapperProject/assets/101409313/82387a20-cf6f-4c50-b2a0-b23a3f274296)
+
 
 
 ### Admin Panel
