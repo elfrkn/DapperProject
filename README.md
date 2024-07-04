@@ -2,6 +2,7 @@
 Bu projede Dapper Orm kullanılarak bir emlak sitesi oluşturulmuştur.Seçtiğiniz parametrelere göre ilanları listeyebilirsiniz.
 İlan detay safyasında seçtiğiniz emlak ile ilgili detaylı bilgilere,resimlere ve ilanın videosuna ulaşabilirsiniz.
 Admin panelinde tüm Crud işlemlerini gerçekleştirebilirsiniz.
+Ayrıca Kaggle ile Imbd Dataseti çekilerek bir Dashboard paneli hazırlanmıştır.Bu panelde verilerle ilgili istatiklere ulaşabilirsiniz.Veriler içerisinde arama yapabilirsiniz.
 
 ## Kullanılan Teknolojiler
 <ul>
@@ -10,6 +11,7 @@ Admin panelinde tüm Crud işlemlerini gerçekleştirebilirsiniz.
  <li> Pagination </li>
  <li> Rich Text Editör </li>
  <li> Folder Structure </li>
+ <li> Kaggle Dataset </li>
  
 ### Ana Sayfa
 ![DapperSlider](https://github.com/elfrkn/DapperProject/assets/101409313/2e5e9a41-36de-43bc-9879-d99a11f34d6f)
@@ -36,6 +38,11 @@ Admin panelinde tüm Crud işlemlerini gerçekleştirebilirsiniz.
 ![Detail1](https://github.com/elfrkn/DapperProject/assets/101409313/d89f28f1-6dd9-47d4-8cf6-7e13a535d949)
 ![Detail2](https://github.com/elfrkn/DapperProject/assets/101409313/8d5aa6bf-7ea7-48ca-a9dc-f45b4cb1c49b)
 ![Detail3](https://github.com/elfrkn/DapperProject/assets/101409313/0ffc2e96-f85d-49ee-a7ee-94bf6e344699)
+
+### Kaggle
+![Dashboard](https://github.com/elfrkn/DapperProject/assets/101409313/d0d11720-fa74-4a7f-9eee-a73e462a2710)
+![DataSearch](https://github.com/elfrkn/DapperProject/assets/101409313/8774c958-4a43-4a1f-820d-8406755eb8fd)
+
 
 ### Admin Panel
 ![AdminPropertyList](https://github.com/elfrkn/DapperProject/assets/101409313/c253efbf-c855-4c9a-ba9a-55b4260a4053)
