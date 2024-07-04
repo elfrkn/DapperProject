@@ -78,7 +78,7 @@ namespace DapperProject.Services
 
         public async Task<int> GetGenreActionCount()
         {
-            string query = "Select Count(*) From ImdbData  Where Genre like '%Drama%' ";
+            string query = "Select Count(*) From ImdbData  Where Genre like '%Action%' ";
             var connection = _context.CreateConnection();
             int value = await connection.QueryFirstOrDefaultAsync<int>(query);
             return value;
